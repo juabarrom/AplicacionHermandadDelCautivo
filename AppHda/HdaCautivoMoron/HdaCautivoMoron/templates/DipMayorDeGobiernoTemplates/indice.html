@@ -1,0 +1,25 @@
+{% extends 'templateBase.html' %}
+
+
+{% block titulo %}
+	HDA. CAUTIVO
+{% endblock %}
+{% block contenido %} 
+	
+	<div class="container">
+
+		<div class="jumbotron">	  	
+			<form action="." method="POST">
+				{% csrf_token %}
+				{{form.as_p}}	
+			<button type="submit" class="btn btn-small btn-primary" >Registrar</button>  
+		</div>
+		<ul>
+			<li><a href="{% url 'vista_historialDeLaCofradia'%}">HISTORIAL DE LA COFRADIA</a></li>
+		</ul>
+	</div>
+
+
+
+	
+{% endblock %}

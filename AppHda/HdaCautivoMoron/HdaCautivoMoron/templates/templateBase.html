@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head lang="es">
+		<!--METAINFORMACION-->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>
+			{% block titulo %}
+    		{% endblock %}
+
+		</title>
+
+		<!--ESTILOS: BOOTSTRAP-->
+		<link type="text/css" rel="stylesheet" href="/static/bootstrap/css/bootstrap.css"/>
+
+    	<script type="text/javascript" src="/static/js/jquery.js"></script>
+    	<script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+
+    	{% block script %}
+    	{% endblock %}
+
+
+	</head>
+
+	<body>
+		<noscript>
+			
+			<div class="noJavaScript">
+				<span class="badge badge-important">
+					<h4>
+					Para el correcto funcionamiento del sistema, por favor active JavaScript en su navegador
+					</h4>
+				</span>
+			</div>	
+		</noscript>
+	
+	<!--IMAGEN DEL ESCUDO DE LA HERMANDAD-->
+	{% load staticfiles %}
+	<div class="container">
+		<div align="center">
+			<img src="{% static "img/escudoHermandad.jpg" %}"/>			
+	</div>		
+
+		{% block contenido %}{% endblock %}
+					
+
+	</body>
+</html>

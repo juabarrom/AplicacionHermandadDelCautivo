@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head lang="es">
+		<!--METAINFORMACION-->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>
+			{% block titulo %}
+    		{% endblock %}
+
+		</title>
+
+
+    	<style type="text/css">
+
+			@page {
+
+
+				@frame {
+					margin-top:5%;
+					margin-left:10%;
+					margin-right:10%;
+					margin-bottom:5%;
+					
+					
+
+				}
+
+				@frame col1{
+					-pdf-frame-content:secretaria;
+					left: 2.7cm; margin-right: 13cm; top: 8cm; margin-bottom: 18cm;
+
+				}
+
+				@frame col2{
+					-pdf-frame-content:mayordomia;
+					 margin-left: 14cm; top: 8cm; margin-bottom: 18cm;
+				}
+
+			}
+			
+			.firmas{
+				zoom: 15%;
+			}
+			
+			#tituloCentral{
+				text-align: center;
+			}
+    	</style>
+	</head>
+
+
+
+	<body>	
+		<img class="escudoHermandad" src="HdaCautivoMoron/static/img/escudoHermandad.jpg" alt="Escudo de hermandad"/>
+
+		
+		<h2> Nuestro Hermano/a: {{nombre}} {{apellidos}} , con número de hermano {{numHermano}}</h2><br>
+		Realízara Estación de Penitencia a la Iglesia de San Miguel Arcangel, el Domingo de Ramos próximo acompañando como: <br>	
+
+		<h1 align="center">{{ lugarEnLaCofradia}} ({{precio }} €)</h1>
+		
+		
+		<h4 align="justify">
+		debiendo hallarse a las 17:00 en el lugar indicado, comprometiendose a observar las recomendaciones adjuntas <br><br>
+		
+	
+		<br>
+		<div id="secretaria">
+			<p>La Secretaria</p> 		
+			<img  class="firmas" src="HdaCautivoMoron/static/img/firmaSecretaria.jpeg" alt="Firma Secretario"/>
+			<p>Isabel Mª Gil Gordillo </p>
+		</div>
+
+		<div id="mayordomia">
+			<p>El Diputado Mayor de Gobierno</p> 		
+			<img  class="firmas" src="HdaCautivoMoron/static/img/firmadipMayorDeGobierno.jpg" alt="Firma Secretario"/> <br> <br>
+			<p>Manuel Salvador Fernández</p>
+		</div>
+
+		<br><br><br><br><br><br><br><br>
+		<div id="tituloCentral"> NORMAS DURANTE LA ESTACIÓN DE PENITENCIA </div><br>
+		Vestid la túnica con el mayor decoro posible. Es obligatorio el uso de los escudos de la capa y el antifaz, así como de gunates blancos, zapatos y calcetines negros. Queda terminantemente prohibido el uso de calzado deportivo, siendo esto motivo para no
+		realizar la estación de penitencia <br><br>
+
+		La Estación de Penitencia de cada hermano comienza en el momento en que se sale de su domicilio. Acudid a la Parroquia por el camino
+		más corto, siempre con el antifaz puesto, sin hablar con el público y debiendo estar en la Iglesia una hora antes de la salida de 
+		la Cofradía. <br><br>
+
+		Dentro de San Miguel iremos a rezar ante Nuestros Titulares, y seguidamente recogeremos nuestro cirio o insignia y buscaremos nuestro sitio en la Cofradía mediante los carteles que se colocaran alrededor del coro <br><br>
+
+		Los hermanos que porten cirios, cuando la cofradía este parada deberán alzar el cirio apoyándolo en el suelo totalmente en horizontal
+		con el mismo, esta totalmente prohibido dar cera <br><br>
+
+		Una vez en la calle no abandonaremos el cortejo, salvo causa de fuerza mayor y siempre lo comunicaremos a nuestro diputado de tramo. Queda prohibido comer y beber durante la Estación de Penitencia. Durante el recorrido estaremos atentos a las indicaciones de los diputados de tramo, fiscales y diputados mayor de gobierno, su trabajo va encaminado para un mayor engrandecimiento de la Cofradía. Los hermanos que porten cirios lo llevaran suspendidos en la mano, nunca apoyados en la cintura. <br><br>
+
+		Una vez que entre la Cofradía, esperaremos a que los pasos con nuestros Sagrados Titulares se coloquen definitivamente en la Iglesia y rezaremos la oración final. Por último, volveremos a nuestra casa lo más rápido posible, por el camino más corto y siempre con el antifaz puesto. <br><br><br>
+		</h4>
+	</body>
+</html>

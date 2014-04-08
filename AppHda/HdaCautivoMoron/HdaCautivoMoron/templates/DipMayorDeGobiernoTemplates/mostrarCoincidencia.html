@@ -1,0 +1,88 @@
+{% extends 'templateBase.html' %}
+
+{% block titulo %}
+	HDA. CAUTIVO
+{% endblock %}
+
+
+{% block contenido %}
+	<div class="container">
+
+	{% if listaCoincidencia %}
+		<div class="span8 offset2 ">
+			<table class="table table-hover table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Nº HERMANO</th>
+						<th>NOMBRE</th>	
+						<th>DNI</th>
+						<th>FECHA</th>
+						<th>MODIFICAR DATOS</th>			
+						<th>ELEGIR</th>						
+					</tr>
+				</thead>
+			{% for hermano in listaCoincidencia %}
+				<tbody>
+					<tr>
+						<td width="120">{{hermano.numHermano}}</td>
+						<td>
+							{{hermano.apellidos|upper}}, {{hermano.nombre|upper}}
+						</td>
+						<td>
+							{{hermano.dni}}
+						</td>
+						<td>
+							{{hermano.fechaNacimiento|date:"d/m/Y"}}
+						</td>
+						<td width="200">
+							
+							{{hermano.id}}
+
+						</td >
+						<td width="120">
+							<button type="button" class="btn btn-default btn-xs" >
+  								<span class="glyphicon glyphicon-tags"></span> <a href="{% url 'vista_papeletaDeSitio' hermano.id %}"> Papeleta de Sitio</a>
+							</button>
+						</td>
+					</tr>	
+				</tbody>
+			{% endfor %}
+			</table>
+
+
+
+
+			{% if listaCoincidencia %}
+				<div align="center">
+		    	<ul class="pagination pagination-centered">
+				{% if listaCoincidencia.has_previous %}
+					<li><a href="/dipMayorDeGobierno/mostrarCoincidencias/1"> << </a></li>
+					<li><a href="/dipMayorDeGobierno/mostrarCoincidencias/{{listaCoincidencia.previous_page_number }}"> Prev </a></li>
+				{% else %}
+					<li class="disabled" ><a href="/dipMayorDeGobierno/mostrarCoincidencias/1"> << </a></li>
+					<li class="disabled"><a  href="#"> Prev </a></li>
+				{% endif %}
+
+				{% if listaCoincidencia.has_next %}
+					<li><a href="/dipMayorDeGobierno/mostrarCoincidencias/{{listaCoincidencia.next_page_number }}"> Next </a></li>
+					<li><a href="/dipMayorDeGobierno/mostrarCoincidencias/{{listaCoincidencia.paginator.num_pages }}"> >> </a><li>
+				{% else %}
+					<li class="disabled"><a href="#"> Next </a></li>
+					<li class="disabled"><a href="/dipMayorDeGobierno/mostrarCoincidencias/{{listaCoincidencia.paginator.num_pages }}"> >> </a><li> 
+				{% endif %}
+					<h4> Página  {{ listaCoincidencia.number }} de {{ listaCoincidencia.paginator.num_pages }}</h4>
+				</ul>
+				</div>
+				
+			{% endif %}
+		</div>
+	</div>
+	{% else%}
+		<p>no hay coincidencias</p>
+	{% endif %}
+	
+
+
+
+	
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'templateBase.html' %}
+{% block titulo %}
+	HDA. CAUTIVO
+{% endblock %}
+{% block contenido %} 
+
+AÑO: {{fecha}} <br>
+CIRIO: {{numLuces}} <br>
+CIRIOS DE CRISTO: {{numLucesCristo}} <br>
+CIRIOS DE VIRGEN: {{numLucesVirgen}} <br>
+
+<br><br>
+
+<div class="container">
+	{%if hermanoInsginia%}
+		<table class="table table-hover table-bordered table-striped">
+						
+						<thead>
+							<tr>
+								<th>INSIGNIAS</th>
+								<th>HERMANOS</th>						
+								
+							</tr>
+						</thead>
+	
+						{%for ins in insignias%}
+						<tbody>
+							<tr>
+								<td width="280">{{ins.nombre }}</td>
+
+								<td>
+						{%for her in hermanoInsginia%}						
+							{%ifequal ins.id her.insignia.id%}
+
+								<a href="{% url 'vista_datosHermano' her.hermano.id %}">({{her.hermano.numHermano}}) {{her.hermano.apellidos|upper}} , {{her.hermano.nombre|upper}} - {{her.hermano.dni}} </a><br>	
+							{% endifequal%}
+							
+						{% endfor %}		
+								</td>
+							</tr>	
+						</tbody>
+					{% endfor %}
+		</table>
+	{%else%}	
+		- AÚN NO HAY REPARTO DE INSIGNIAS PARA ESTE AÑO
+	{%endif%}
+</div>
+
+{% endblock %}
+

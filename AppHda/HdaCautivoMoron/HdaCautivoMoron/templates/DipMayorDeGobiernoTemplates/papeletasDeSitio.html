@@ -1,0 +1,28 @@
+{% extends 'templateBase.html' %}
+{% block titulo %}
+	HDA. CAUTIVO
+{% endblock %}
+{% block contenido %} 
+
+<div class="container">
+		
+	
+	<div class="jumbotron">
+		<h2>Datos del hermano</h2>
+			<span class="label label-primary">NOMBRE:</span> {{ hermano.apellidos|upper}},{{hermano.nombre|upper}} <br>
+		<span class="label label-primary">DNI:</span> {{hermano.dni|upper}}<br> <br><br>
+
+		
+		
+		<form action="." method="POST">
+			{% csrf_token %}
+			{{formPapeletaInsignia.as_p }}
+		<button type="submit" class="btn btn-small btn-primary" >Selccionar</button>  
+	</div>	
+		
+
+	
+</div>
+	
+
+{% endblock %}

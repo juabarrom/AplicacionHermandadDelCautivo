@@ -1,0 +1,21 @@
+{% extends 'templateBase.html' %}
+{% block titulo %}
+	HDA. CAUTIVO
+{% endblock %}
+{% block contenido %} 
+
+
+{% if hermano%}
+	{% for h in hermano%}
+	{{h.apellidos}} , {{h.nombre}} <br>
+	D.N.I: {{h.dni}} <br>
+	Fecha de Nacimiento: {{h.fechaNacimiento}} <br>
+	Telefono: {{h.telefono}} <br>
+	Movil: {{h.movil}} <br>
+
+	{% endfor %}
+{% else %}
+	- NO EXISTE ESTE HERMANO
+{% endif %}
+{% endblock %}
+
